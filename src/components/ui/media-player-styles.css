@@ -1,0 +1,204 @@
+/* Base styles for the audio player */
+.rhap_container {
+  background-color: #121212 !important; /* Dark background */
+  box-shadow: none !important;
+  padding: 20px 25px !important;
+  border-radius: 12px;
+}
+
+.rhap_main {
+  gap: 15px;
+}
+
+/* Progress bar styling */
+.rhap_progress-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.rhap_progress-container {
+  flex-grow: 1;
+  width: auto;
+}
+.rhap_progress-bar {
+  background-color: #4a4a4a !important; /* Gray track */
+  height: 8px !important;
+  border-radius: 4px;
+}
+.rhap_progress-filled {
+  background-color: #de2a31 !important; /* Red filled section */
+  border-radius: 4px;
+}
+.rhap_progress-indicator {
+  background-color: white !important;
+  border-radius: 50%;
+  width: 18px !important;
+  height: 18px !important;
+  box-shadow: none !important;
+  top: -5px !important; /* Center the thumb on the bar */
+}
+
+/* Controls section styling */
+.rhap_controls-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.rhap_additional-controls,
+.rhap_main-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.rhap_time-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Icons and Buttons */
+.rhap_button-clear,
+.rhap_repeat-button {
+  color: white !important;
+  font-size: 28px !important;
+}
+
+.rhap_button-clear.rhap_main-controls-button.rhap_rewind-button,
+.rhap_button-clear.rhap_main-controls-button.rhap_forward-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rhap_button-clear:hover {
+  color: #cccccc !important;
+}
+
+.rhap_play-pause-button {
+  font-size: 40px !important;
+  color: #de2a31 !important;
+  width: 40px !important;
+  height: 40px !important;
+}
+
+.rhap_play-pause-button:hover {
+  color: #cccccc !important;
+}
+
+/* Time display (current and duration) */
+.rhap_time {
+  color: white !important;
+  font-size: 14px;
+  font-family: monospace;
+}
+
+/* Custom divider style */
+.time-divider {
+  color: #a0a0a0;
+  font-size: 14px;
+  font-family: monospace;
+  margin: 0 4px;
+}
+
+.rhap_volume-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.rhap_volume-bar {
+  background-color: #4a4a4a !important;
+  height: 6px !important;
+  width: 80px !important;
+  border-radius: 3px;
+}
+
+.rhap_volume-indicator {
+  background: white !important;
+  height: 14px !important;
+  width: 14px !important;
+  top: -4px !important;
+  box-shadow: none !important;
+}
+
+.rhap_volume-button {
+  font-size: 24px !important;
+  color: white !important;
+}
+
+/* Custom speed control button */
+.speed-control-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-size: 28px;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.speed-control-button:hover {
+  color: #cccccc;
+}
+
+/* --- Mobile View (for screens smaller than 768px) --- */
+@media screen and (max-width: 768px) {
+  .rhap_container {
+    padding: 20px !important;
+  }
+
+  /* Stack the main sections vertically */
+  .rhap_main {
+    flex-direction: column !important;
+    gap: 20px;
+  }
+
+  /* Center the progress bar section and its contents */
+  .rhap_progress-section {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+  }
+
+  /* Ensure play/pause and progress bar are in the right order */
+  .rhap_main-controls {
+    order: 1; /* Show play/pause button first */
+  }
+  .rhap_progress-container {
+    order: 2; /* Show progress bar second */
+    width: 100%; /* Make progress bar full width */
+  }
+
+  /* Stack and center the bottom controls */
+  .rhap_controls-section {
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  /* Group and center the rewind, speed, and forward buttons */
+  .rhap_additional-controls {
+    order: 1;
+    gap: 25px; /* Add more space between these main controls */
+  }
+
+  /* Center the time display */
+  .rhap_time-controls {
+    order: 2;
+  }
+
+  .speed-control {
+    cursor: pointer;
+  }
+  /* Center the volume controls */
+  .rhap_volume-container {
+    order: 3;
+  }
+}
