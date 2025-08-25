@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Raleway } from "next/font/google";
 import "./globals.css";
-import { SanityLive } from "@/sanity/lib/live";
 
 const raleway = Raleway({
   variable: "--font-raleway",
@@ -24,7 +23,6 @@ export default function RootLayout({
         className={`min-h-screen flex flex-col ${raleway.variable} antialiased justify-center`}
       >
         {children}
-        <SanityLive />
       </body>
     </html>
   );
