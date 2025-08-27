@@ -39,6 +39,8 @@ export default function Mission() {
       setPost(fetchedPost);
     };
 
+    console.log("dsf");
+
     fetchPost();
   }, []);
 
